@@ -1,0 +1,22 @@
+@use "sass:map";
+@use "./palettes/palettes" as palettes;
+@use '@angular/material' as mat;
+
+
+$guid-man-primary: mat.define-palette(palettes.$champagne-palette, 50);
+$guid-man-accent: mat.define-palette(palettes.$slate-blue-palette, 400, 200, 700);
+
+// The warn palette is optional (defaults to red).
+$guid-man-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$guid-man-theme: mat.define-light-theme((
+  color: (
+    primary: $guid-man-primary,
+    accent: $guid-man-accent,
+    warn: $guid-man-warn,
+  ),
+  typography: mat.define-typography-config(),
+  density: 0
+));
